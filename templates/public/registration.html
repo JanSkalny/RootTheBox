@@ -137,55 +137,52 @@
                     </div>
                 </div>
                 {% end %}
-				{% if options.user_gender %}
+                {% if options.user_gender %}
                 <div class="control-group">
                     <label class="control-label" for="gender">
                         {{ _("Gender") }}
                     </label>
                     <div class="controls">
-						<select id="gender" name="gender">
-							{% for gender in options.user_gender %}
-								<option value="{{ gender }}">{{ _(gender) }}</option>
-							{% end %}
-						</select>
+                        <select id="gender" name="gender">
+                            {% for gender in options.user_gender %}
+                                <option value="{{ gender }}">{{ _(gender) }}</option>
+                            {% end %}
+                        </select>
                     </div>
                 </div>
-				{% end %}
-				{% if options.user_profession %}
+                {% end %}
+                {% if options.user_profession %}
                 <div class="control-group">
                     <label class="control-label" for="profession">
                         {{ _("Profession") }}
                     </label>
                     <div class="controls">
-						<select id="profession" name="profession">
-							{% for profession in options.user_profession %}
-								<option value="{{ profession }}">{{ _(profession) }}</option>
-							{% end %}
-						</select>
+                        <select id="profession" name="profession">
+                            {% for profession in options.user_profession %}
+                                <option value="{{ profession }}">{{ _(profession) }}</option>
+                            {% end %}
+                        </select>
                     </div>
                 </div>
-				{% end %}
-
+                {% end %}
                 {% if options.communication_consent %}
-                    <div class="control-group">
-                      <label class="control-label" for="communication_consent_accept"></label>
-                        <div class="controls">
-                            <input id="communication_consent_accept" name="communication_consent_accept" type="checkbox" />
-                            &nbsp;{{ _("I agree to be contacted during next year tournament.") }}
-                        </div>
+                <div class="control-group">
+                  <label class="control-label" for="communication_consent_accept"></label>
+                    <div class="controls">
+                        <input id="communication_consent_accept" name="communication_consent_accept" type="checkbox" />
+                        &nbsp;{{ _("I agree to be contacted during next year tournament.") }}
                     </div>
+                </div>
                 {% end %}
-
                 {% if options.public_consent %}
-                    <div class="control-group">
-                      <label class="control-label" for="public_consent_accept"></label>
-                        <div class="controls">
-                            <input id="public_consent_accept" name="public_consent_accept" type="checkbox" />
-                            &nbsp;{{ _("I agree for my results to be publicly available.") }}
-                        </div>
+                <div class="control-group">
+                  <label class="control-label" for="public_consent_accept"></label>
+                    <div class="controls">
+                        <input id="public_consent_accept" name="public_consent_accept" type="checkbox" />
+                        &nbsp;{{ _("I agree for my results to be publicly available.") }}
                     </div>
+                </div>
                 {% end %}
-
                 <hr style="margin-right: 400px;">
                 {% if options.teams %}
                     {% if options.public_teams %}
