@@ -82,6 +82,10 @@ class User(DatabaseObject):
     _notes = Column(Unicode(512))
     _expire = Column(DateTime, default=None, nullable=True)
     money = Column(Integer, default=0, nullable=False)
+    profession = Column("profession", String(128), nullable=True)
+    gender = Column("gender", String(128), nullable=True)
+    communication_consent = Column(Boolean, nullable=True)
+    public_consent = Column(Boolean, nullable=True)
 
     theme_id = Column(Integer, ForeignKey("theme.id"), default=3, nullable=False)
 

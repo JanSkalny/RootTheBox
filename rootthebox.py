@@ -1030,6 +1030,37 @@ define(
     multiple=True,
 )
 
+define(
+    "user_gender",
+    multiple=True,
+    default=[],
+    group="game",
+    help="user-selectable gender",
+)
+
+define(
+    "user_profession",
+    multiple=True,
+    default=[],
+    group="game",
+    help="user-selectable profession",
+)
+
+define(
+    "communication_consent",
+    default=False,
+    type=bool,
+    group="game",
+    help="Ask user for communitaion consent",
+)
+define(
+    "public_consent",
+    default=False,
+    type=bool,
+    group="game",
+    help="Ask user for publication consent",
+)
+
 # Process modes/flags
 define("setup", default="", help="setup a database (prod|devel|docker)")
 

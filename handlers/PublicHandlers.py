@@ -443,6 +443,10 @@ class RegistrationHandler(BaseHandler):
             raise ValidationError("This email address is already registered")
         if self.get_argument("pass1", "") != self.get_argument("pass2", ""):
             raise ValidationError("Passwords do not match")
+        if self.get_argument("gender", None) not in options.user_gender:
+            raise ValidationError("Invalid gender")
+        if self.get_argument("profession", None) not in options.user_profession:
+            raise ValidationError("Invalid profession")
 
     def create_user(self):
         """ Add user to the database """
@@ -453,6 +457,10 @@ class RegistrationHandler(BaseHandler):
         user.name = self.get_argument("playername", "")
         user.email = self.get_argument("email", "")
         user.theme = options.default_theme
+        user.gender = self.get_argument("gender", "")
+        user.profession = self.get_argument("profession", "")
+        user.communication_consent = bool(self.get_argument("communication_consent_accept", False))
+        user.public_consent = bool(self.get_argument("public_consent_accept", False))
         team = self.get_team()
         self.dbsession.add(user)
         self.dbsession.add(team)
